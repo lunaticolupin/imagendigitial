@@ -1,4 +1,4 @@
-# Función Logaritmica
+# Función Coseno Oscurece
 
 # importamos el modulo pyplot, y lo llamamos plt
 import matplotlib.pyplot as plt

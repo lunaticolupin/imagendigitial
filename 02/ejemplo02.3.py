@@ -20,8 +20,8 @@ plt.imshow(image,vmin=0,vmax=255)
 plt.show()
 u = 255/math.log(256)
 
-for i in range(0,len(temp)):
-    for j in range(0,len(temp[0])):
+for i in range(0,len(temp[0])): #largo
+    for j in range(0,len(temp)): #ancho
         z = temp[i,j]
         z2 = u*math.log(z+1)
 

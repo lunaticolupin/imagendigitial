@@ -8,12 +8,12 @@ plt.rcParams['image.cmap'] = 'gray'
 
 from skimage import io
 
-image=io.imread("lena_gray.png")
+image=io.imread("huella.jpg")
 # El rano de valores del pixel esta entre 0-255.
 
 temp = np.copy(image)
-largo = len(temp[0])
-ancho = len(temp)
+largo = len(temp)
+ancho = len(temp[0])
 
 plt.title("Imagen original")
 plt.imshow(image,vmin=0,vmax=255)
