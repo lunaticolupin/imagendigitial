@@ -7,7 +7,7 @@ plt.rcParams['image.cmap'] = 'gray'
 
 from skimage import io
 
-imagen=io.imread("mario.jpg")
+imagen=io.imread("lena_gray.png")
 
 temp = np.copy(imagen)
 largo = len(temp)
@@ -19,15 +19,19 @@ plt.show()
 nuevo_pixel = 0
 
 #Cuenta los colores de la imagen
-for i in range(1, largo):
-    for j in range(1, ancho):
-        pixel1=imagen[i-1,j-1]*1/4
-        pixel2=imagen[i-1,j]*1/4
-        pixel3=imagen[i,j-1]*1/4
-        pixel_actual=imagen[i,j]*1/4
-        nuevo_pixel = pixel1+pixel2+pixel3+pixel_actual
-        #print (nuevo_pixel)
-        temp[i,j] = nuevo_pixel
+for i in range(0, largo):
+    for j in range(0, ancho):
+        media = 0
+        pixeles = 0
+        for x in [-4,-3,-2,-1,0,1,2,3,4]:
+            for y in [-4,-3,-2,-1,0,1,2,3,4]:
+                try:
+                    media = media + imagen[i+x,j+x]*1
+                    pixeles = pixeles+1
+                except:
+                    continue
+        
+        temp[i,j] = media/pixeles
 
 plt.title("Imagen Con filtro media")
 plt.imshow(temp,vmin=0,vmax=255)

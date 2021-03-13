@@ -19,20 +19,45 @@ plt.title("Imagen original")
 plt.imshow(imagen,vmin=0,vmax=255)
 plt.show()
 
-#Borde por recorrido horizontal
+#Borde  gradiente
 for i in range(0, largo-1):
     for j in range(0, ancho-1):
         pixel_derecha = imagen[i+1,j]*1
-        pixel_arriba = imagen[i,j+1]*1
+        pixel_abajo = imagen[i,j+1]*1
         pixel_actual = imagen[i,j]*1
 
-        pixel_der = abs(pixel_derecha - pixel_actual)
-        pixel_arr = abs(pixel_arriba - pixel_actual)
+        derivada_h = abs(pixel_derecha - pixel_actual)
+        derivada_v = abs(pixel_abajo - pixel_actual)
 
-        color = 0.5 * math.sqrt(pixel_der**2 + pixel_arr**2)
-            
-        temp[i,j] = color
+        color = math.sqrt(derivada_h**2 + derivada_v**2)
+
+        if (color > 255):
+            color = 255
+        
+        temp[i,j] = int(color)
 
 plt.title("Detección de borde gradiente")
+plt.imshow(temp,vmin=0,vmax=255)
+plt.show()
+
+#Borde  gradiente aproximado
+for i in range(0, largo-1):
+    for j in range(0, ancho-1):
+        pixel_esquina = imagen[i+1, j+1]
+        pixel_derecha = imagen[i+1,j]*1
+        pixel_abajo = imagen[i,j+1]*1
+        pixel_actual = imagen[i,j]*1
+
+        derivada_h = abs(pixel_esquina - pixel_actual)
+        derivada_v = abs(pixel_abajo - pixel_derecha)
+
+        color = math.sqrt(derivada_h**2 + derivada_v**2)
+
+        if (color > 255):
+            color = 255
+        
+        temp[i,j] = int(color)
+
+plt.title("Detección de borde gradiente aproximado")
 plt.imshow(temp,vmin=0,vmax=255)
 plt.show()

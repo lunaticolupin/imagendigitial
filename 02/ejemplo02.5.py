@@ -21,9 +21,15 @@ plt.show()
 
 for i in range(0,len(temp)):
     for j in range(0,len(temp[0])):
-        z = temp[i,j]
+        z = temp[i,j]*1
         z2 = 128*(1-math.cos((3.14*z)/(2*128)))
-        temp[i,j]=z2
+        if (z2 < 0):
+            z2 =0
+
+        if (z2 > 255):
+            z2=255
+
+        temp[i,j]=z2*1
 
 plt.title("Imagen oscurecida")
 plt.imshow(temp,vmin=0,vmax=255)

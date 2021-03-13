@@ -8,7 +8,7 @@ plt.rcParams['image.cmap'] = 'gray'
 
 from skimage import io
 
-imagen=io.imread("lena_gray.png")
+imagen=io.imread("mario.jpg")
 # El rano de valores del pixel esta entre 0-255.
 
 temp = np.copy(imagen)
@@ -23,6 +23,7 @@ plt.show()
 for i in range(0, largo-1):
     for j in range(0, ancho-1):
         nuevo_pixel = abs(imagen[i+1,j]*1 - imagen[i,j]*1)
+        #nuevo_pixel = abs(imagen[i+1,j] - imagen[i,j])
         temp[i,j] = nuevo_pixel
 
 plt.title("Detección de borde recorrido horizontal")
@@ -39,6 +40,7 @@ plt.title("Detección de borde recorrido vertical")
 plt.imshow(temp,vmin=0,vmax=255)
 plt.show()
 
+temp = np.copy(imagen)
 #Borde por valor maximo
 for i in range(0, largo-1):
     for j in range(0, ancho-1):
