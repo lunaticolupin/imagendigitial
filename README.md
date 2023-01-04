@@ -8,8 +8,8 @@ Repositorio para la materia Procesamiento de Imagen Digital IESAC
 
 # Librerias necesarias para los ejemplos
 
-numpy
-matplotlib
-scikit-image
-opencv-python
-PySimpleGUI
+- numpy
+- matplotlib
+- scikit-image
+- opencv-python
+- PySimpleGUI
