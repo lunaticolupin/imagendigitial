@@ -16,8 +16,8 @@ Repositorio para la materia Procesamiento de Imagen Digital IESAC
 
 Instalación desde cmd
 
-python3 pip install numpy
-python3 pip install matplotlib
-python3 pip install scikit-image
-python3 pip install opencv-python
-python3 pip install PySimpleGUI
+- python3 pip install numpy
+- python3 pip install matplotlib
+- python3 pip install scikit-image
+- python3 pip install opencv-python
+- python3 pip install PySimpleGUI
