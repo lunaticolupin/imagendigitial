@@ -4,7 +4,7 @@ Repositorio para la materia Procesamiento de Imagen Digital IESAC
 # Requerimientos
 
 - Python 3.8 o superior
-- Gestor de paquete pip https://bootstrap.pypa.io/get-pip.py
+- Gestor de paquete pip https://bootstrap.pypa.io/get-pip.py 
 
 # Librerias necesarias para los ejemplos
 
@@ -13,3 +13,11 @@ Repositorio para la materia Procesamiento de Imagen Digital IESAC
 - scikit-image
 - opencv-python
 - PySimpleGUI
+
+Instalación desde cmd
+
+python3 pip install numpy
+python3 pip install matplotlib
+python3 pip install scikit-image
+python3 pip install opencv-python
+python3 pip install PySimpleGUI
